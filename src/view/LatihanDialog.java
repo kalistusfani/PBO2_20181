@@ -5,19 +5,21 @@
  */
 package view;
 
-import java.awt.Font;
+import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
  *
- * @author Puspaningtyas
+ * @author user only
  */
 public class LatihanDialog extends JDialog {
 
+    private JLabel judulLabel;
     private JLabel namaLabel;
     private JTextField namaText;
+    private JButton saveButton;
 
     public LatihanDialog() {
         init();
@@ -28,16 +30,31 @@ public class LatihanDialog extends JDialog {
         init();
     }
 
-    /**
-     * Fungsi inisialisasi atribut
-     */
     public void init() {
         this.setLayout(null);
-        // label nama
+
+        judulLabel = new JLabel("DAFTAR PASIEN BARU");
+        judulLabel.setBounds(70, 20, 150, 10);
+        this.add(judulLabel);
+
         namaLabel = new JLabel("Nama");
-        // pengaturan posisi label : posisi 50,250, lebar 50, tinggi 10
-        namaLabel.setBounds(50, 250, 250, 20);
-        namaLabel.setFont(new Font(null,Font.PLAIN,18));
+        namaLabel.setBounds(50, 50, 50, 10);
         this.add(namaLabel);
+
+        namaText = new JTextField(100);
+        namaText.setBounds(120, 50, 150, 20);
+        this.add(namaText);
+
+        namaLabel = new JLabel("Alamat");
+        namaLabel.setBounds(50, 100, 85, 10);
+        this.add(namaLabel);
+
+        namaText = new JTextField(100);
+        namaText.setBounds(120, 100, 150, 20);
+        this.add(namaText);
+
+        saveButton = new JButton("SAVE");
+        saveButton.setBounds(35, 200, 80, 20);
+        this.add(saveButton);
     }
 }

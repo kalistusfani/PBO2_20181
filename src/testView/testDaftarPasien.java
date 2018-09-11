@@ -5,18 +5,19 @@
  */
 package testView;
 
+import view.DaftarPasien;
 import view.LatihanDialog;
-import view.MainFrame;
 
 /**
  *
  * @author jarkom
  */
-public class TestMainFrame {
+public class testDaftarPasien {
+
     public static void main(String[] args) {
-        MainFrame test = new MainFrame();
+        DaftarPasien test = new DaftarPasien();
         test.setSize(300, 400);
         test.setVisible(true);
     }
-   
+
 }

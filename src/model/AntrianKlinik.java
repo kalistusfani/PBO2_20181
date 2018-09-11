@@ -5,65 +5,65 @@
  */
 package model;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 /**
  *
- * @author user only
+ * @author Kalistus Fani
  */
 public class AntrianKlinik {
-    private Date tanggalAntrian;
+
     private String namaKlinik;
-    
-    private ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
+    private String idKlinik;
 
-    public void mendaftar(Pasien pasien){
-        getDaftarPasien().add(pasien);
-    }
-    
     /**
-     * @return the tanggalAntrian
+     * *
+     * membuat konstruktorkosong pada kelas antriPasien
      */
-    public Date getTanggalAntrian() {
-        return tanggalAntrian;
+    public AntrianKlinik() {
+
     }
 
     /**
-     * @param tanggalAntrian the tanggalAntrian to set
-     */
-    public void setTanggalAntrian(Date tanggalAntrian) {
-        this.tanggalAntrian = tanggalAntrian;
-    }
-
-    /**
-     * @return the namaKlinik
+     * *
+     * membuat method getNamaKlinik dengan tipe String untuk mengembalikan nilia
+     * menggunakan
+     *
+     * @return namaKlinik
      */
     public String getNamaKlinik() {
         return namaKlinik;
     }
 
     /**
-     * @param namaKlinik the namaKlinik to set
+     * *
+     * membuat method setNamaKlinik bertipe void untuk menyamakan nilai variabel
+     * namaKlinik global dan variabel namaKlinik lokal
+     *
+     * @param namaKlinik
      */
     public void setNamaKlinik(String namaKlinik) {
         this.namaKlinik = namaKlinik;
     }
 
     /**
-     * @return the daftarPasien
+     * *
+     * membuat method getIdKlinik dengan tipe String untuk mengembalikan nilia
+     * menggunakan
+     *
+     * @return idKlinik
      */
-    public ArrayList<Pasien> getDaftarPasien() {
-        return daftarPasien;
+    public String getIdKlinik() {
+        return idKlinik;
     }
 
-    /**
-     * @param daftarPasien the daftarPasien to set
-     */
-    public void setDaftarPasien(ArrayList<Pasien> daftarPasien) {
-        this.daftarPasien = daftarPasien;
+    public void setIdKlinik(String idKlinik) {
+        this.idKlinik = idKlinik;
     }
-    
-    
-    
+
+    public void mendaftar(Pasien test1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getDaftarPasien() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
