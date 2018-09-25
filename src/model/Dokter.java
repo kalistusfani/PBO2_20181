@@ -11,192 +11,211 @@ package model;
  */
 public class Dokter {
     
-    //deklarsi variabel nama bertipe String dengan sifat private
+    private String nomorPegawai;
     private String nama;
-    //deklarsi variabel alamt bertipe String dengan sifat private
     private String alamat;
-    //deklarsi variabel noPegawai bertipe String dengan sifat private
-    private String noPegawai;
-    //deklarsi variabel tenpatLahir bertipe String dengan sifat private
     private String tempatLahir;
-    //deklarsi variabel tanggalLahir bertipe integer dengan sifat private
     private int tanggalLahir;
-    //deklarsi variabel bulanLahir bertipe integer dengan sifat private
     private int bulanLahir;
-    //deklarsi variabel tahunLahir bertipe integer dengan sifat private
     private int tahunLahir;
-    
-    /***
-     * membuat konstruktor kosong pada kelas Dokter
+
+    /**
+     * constructor untuk mendeklarasikan objek Dokter
      */
-    
     public Dokter() {
 
     }
-    
-    /***
-     * membuat konstruktor dengan parameter nama bertipe String
-     * @param nama 
-     */
 
+    /**
+     * constructor untuk mendeklarasikan objek Dokter dengan parameter lokal
+     * nama dengan tipe data String
+     *
+     * @param nama
+     */
     public Dokter(String nama) {
+        // pernyataan bahwa nilain variabel nama sama dengan nilai dari variabel lokal nama
         this.nama = nama;
     }
-    
-    /***
-     * membuat method getNama dengan tipe String dan mengembalikan nilai menggunakan
-     * @return nama
-     */
-    
-    public String getNama(){
-        return nama;
-    }
-    
-    /***
-     * membuat method getAlamat dengan tipe String dan mengembalikan nilai menggunakan
-     * @return alamat
-     */
 
-    public String getAlamat() {
-        return alamat;
-    }
-    
-    /***
-     * membuat method setAlamat dengan tipe void untuk menyamakan nilai variabel global
-     * alamat dan variabel lokal alamat
-     * @param alamat 
+    /**
+     * method untuk mengambil nilai dari variabel nomorPegawai
+     *
+     * @return
      */
-
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
-    }
-    
-    /***
-     * membuat method getNoPegawai dengan tipe String dan mengembalikan nilai menggunakan
-     * @return noPegawai
-     */
-
-    public String getNoPegawai() {
-        return noPegawai;
+    public String getNomorPegawai() {
+        //pengambalian nilai dari variabel nomorPegawai
+        return nomorPegawai;
     }
 
-    /***
-     * method ini digunakan untuk memasukan nomor pegawai
-     * dokter
-     * @param noPegawai
-     * @throws Exception 
+    /**
+     * method untuk meng-set nilai dari variabel nomorPegawai dengan variabel
+     * lokal nomorPegawai dengan tipe data String
+     *
+     * @param nomorPegawai
+     * @throws Exception
      */
-    public void setNoPegawai(String noPegawai) throws Exception {
-        //panjang digit nomor pegawai harus sama dengan 5
-        if (noPegawai.length() == 5) {
-            this.noPegawai = noPegawai;
+    public void setNomorPegawai(String nomorPegawai) throws Exception {
+        //pengecekan panjang karakter variabel lokal nomorPegawai harus sama dengan 5 
+        if (nomorPegawai.length() == 5) {
+            //pernyataan bahwa nilai variabel nomorPegawai sama dengan nilai dari variabel lokal nomorPegawai ditambah 3 huruf awal dari variabel nama
+            this.nomorPegawai = (nomorPegawai + nama.substring(0, 3));
         } else {
-            //nomor pegawai yang dimasukan kurang atau lebigh dari 5 digit
-            throw new Exception("Nomor yang Anda masukan salah");
+            // pesan apabila input nomorPegawai salah
+            throw new Exception("No Pegawai Salah");
         }
     }
-    
-    /***
-     * method getTempatLahir dan mengembalikan nilai
-     * @return tempatLahir
-     */
 
+    /**
+     * method untuk mengambil nilai dari variabel nama
+     *
+     * @return
+     */
+    public String getNama() {
+        //pengambalian nilai dari variabel nama
+        return nama;
+    }
+
+    /**
+     * method untuk meng-set nilai dari variabel nama dengan variabel lokal nama
+     * dengan tipe data String
+     *
+     * @param nama
+     */
+    public void setNama(String nama) {
+        // pernyataan bahwa nilai dari variabel nama sama dengan nilai dari variabel lokal nama
+        this.nama = nama;
+    }
+
+    /**
+     * method untuk mengambil nilai dari variabel alamat
+     *
+     * @return
+     */
+    public String getAlamat() {
+        //pengambalian nilai dari variabel alamat
+        return alamat;
+    }
+
+    /**
+     * method untuk mengset nilai dari variabel alamat dengan parameter lokal
+     * alamat yang bertipe String
+     *
+     * @param alamat
+     */
+    public void setAlamat(String alamat) {
+        // pernyataan bahwa nilai dari variabel alamat sama dengan nilai dari variabel lokal alamat
+        this.alamat = alamat;
+    }
+
+    /**
+     * method untuk mengambil nilai dari variabel tempatLahir
+     *
+     * @return
+     */
     public String getTempatLahir() {
+        //pengambalian nilai dari variabel tempatLahir
         return tempatLahir;
     }
-    
-    /***
-     * method untuk memasukan nilai tempatLahir dan menyamalannya dengan variabel lokal
-     * @param tempatLahir 
-     */
 
+    /**
+     * method untuk mengset nilai dari variabel tempatLahir dengan parameter
+     * lokal tempatLahir yang bertipe String
+     *
+     * @param tempatLahir
+     */
     public void setTempatLahir(String tempatLahir) {
+        // pernyataan bahwa nilai dari variabel tempatLahir sama dengan nilai dari variabel lokal tempatLahir
         this.tempatLahir = tempatLahir;
     }
-    
-    /***
-     * method getTanggalLahir dan mengembalikan nilai mengembalikan nilai dengan
-     * @return tanggalLahir
-     */
 
+    /**
+     * method untuk mengambil nilai dari variabel tanggalLahir
+     *
+     * @return
+     */
     public int getTanggalLahir() {
+        //pengambalian nilai dari variabel tanggalLahir
         return tanggalLahir;
     }
 
-    /***
-     * method ini digunakan untuk mengatur tanggal lahir dokter
+    /**
+     * method untuk meng-set nilai dari variabel tanggalLahir dengan variabel
+     * lokal tanggalLahir dengan tipe data String
+     *
      * @param tanggalLahir
-     * @throws Exception 
+     * @throws Exception
      */
     public void setTanggalLahir(int tanggalLahir) throws Exception {
-        //tanggal yang dimasukan tidak boleh kurang dari 1 atau harus lebih dari 0
+        //pengecekan nilai variabel lokal tanggalLahir harus lebih dari 0
         if (tanggalLahir > 0) {
-            //tanggal yang dimasukan tidak boleh lebih dari 31
+            //pengecekan nilai variabel lokal tanggalLahir harus kurang dari sama dengan 31
             if (tanggalLahir <= 31) {
+                //pernyataan bahwa nilai dari variabel tanggalLahir sama dengan nilai dari variabel lokal tanggalLahir
                 this.tanggalLahir = tanggalLahir;
-                //tanggal yang dimasukan lebih dari 31
             } else {
-                throw new Exception("Tanggal yang Anda masukan melebihi batas yang ditentukan");
+                // pesan apabila input tanggalLahir lebih dari 31 
+                throw new Exception("Input Tanggal Lebih Dari 31");
             }
-            //tanggal yang dimasukan kurang dari 1
         } else {
-            throw new Exception("Tanggal yang Anda masukan kurang dari batas yang ditentukan ");
-
+            // pesan apabila input tanggalLahir kurang dari 0 
+            throw new Exception("Input Tanggal Kurang Dari 0");
         }
     }
-    
-    /***
-     * method getBulanLahir dengan nilai pengembalian 
-     * @return bulanLahir
-     */
 
-    public int getBulanlLahir() {
+    public int getBulanLahir() {
+        // pengambalian nilai dari variabel bulanLahir
         return bulanLahir;
     }
 
-    /***
-     * method ini digunakan untuk mengatur bulan lahir dari dokter
+    /**
+     * method untuk meng-set nilai dari variabel bulanLahir dengan variabel
+     * lokal bulanLahir dengan tipe data String
+     *
      * @param bulanLahir
-     * @throws Exception 
+     * @throws Exception
      */
-    public void setbulanLahir(int bulanLahir) throws Exception {
-        //bulan lahir yang dimasukan tidak boleh kurang dari 1 atau harus lebih dari 0
+    public void setBulanLahir(int bulanLahir) throws Exception {
+        //pengecekan nilai variabel lokal bulanLahir harus lebih dari 0
         if (bulanLahir > 0) {
-            //bulan lahir yang dimasukan tidak boleh lebih dari 12
+            //pengecekan nilai variabel lokal bulanLahir harus kurang dari sama dengan 12
             if (bulanLahir <= 12) {
+                //pernyataan bahwa nilai dari variabel bulanLahir sama dengan nilai dari variabel lokal bulanLahir
                 this.bulanLahir = bulanLahir;
-                //bulan lahir yang dimasukan lebih dari 12
             } else {
-                throw new Exception("Bulan yang Anda masukan melebihi batas yang ditentukan");
-
+                // pesan apabila input bulanLahir lebih dari 12
+                throw new Exception("Input Bulan Lebih Dari 12");
             }
-            //bulan lahir yang dimasukan kurang dari 1
         } else {
-            throw new Exception("Bulan yang Anda masukan kurang dari batas yang ditentukan ");
+            // pesan apabila input bulanLahir kurang dari 0 
+            throw new Exception("input Bulan Kurang Dari 0");
         }
-    }
-    
-    /***
-     * membuat method getTahunLahir dengan tipe integer dan mengembalikan nilai menggunakan
-     * @return tahunLahir
-     */
 
-    public int getTahunlLahir() {
+    }
+
+    /**
+     * method untuk mengambil nilai dari variabel tahunLahir
+     *
+     * @return
+     */
+    public int getTahunLahir() {
         return tahunLahir;
     }
 
-    /***
-     * method ini digunakan untuk mengatur tanggal lahir dari dokter
+    /**
+     * method untuk meng-set nilai dari variabel tahunLahir dengan variabel
+     * lokal tahunLahir dengan tipe data String
+     *
      * @param tahunLahir
-     * @throws Exception 
+     * @throws Exception
      */
-    public void settahunLahir(int tahunLahir) throws Exception {
-        //tahun lahir yang dimasukan tidak boleh kurang dari 1 atau harus lebih dari 0
+    public void setTahunLahir(int tahunLahir) throws Exception {
+        //pengecekan nilai variabel lokal tahunLahir harus lebih dari 0
         if (tahunLahir > 0) {
+            //pernyataan bahwa nilai dari variabel tahunLahir sama dengan nilai dari variabel lokal tahunLahir
             this.tahunLahir = tahunLahir;
-            //tahun lahir yang dimasukan kurang dari 1
         } else {
-            throw new Exception("Tahun yang diinputkan salah");
+            // pesan apabila input tahunLahir
+            throw new Exception("Salah Input Tahun");
         }
     }
 }

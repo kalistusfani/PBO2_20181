@@ -7,219 +7,265 @@
 package model;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  *
- * @author admin
+ * @author Asus
  */
 public class Pasien {
+
+    private String noRekamMedis;
     private String nama;
-    private int tanggalLahir;
     private String alamat;
     private String tempatLahir;
+    private int tanggalLahir;
     private int bulanLahir;
     private int tahunLahir;
-    private String RekamMedis;
-    
-    /***
-     * membuat konstruktor kosong di kelas Pasien
+    private String nik = noRekamMedis;
+    public static ArrayList<Pasien> daftarPasien = new ArrayList<Pasien>();
+
+    /**
+     * constructor untuk mendeklarasikan objek pasien
      */
-    
-    public Pasien(){
-        
+    public Pasien() {
+
     }
-    
-    /***
-     * membuat konstruktor dengan parameter nama dengan tipe String
-     * @param nama 
+
+    /**
+     * constructor untuk mendeklarasikan objek pasien dengan parameter lokal
+     * nama dengan tipe data String
+     *
+     * @param nama
      */
-    
-    public Pasien(String nama){
-        this.nama=nama;
+    public Pasien(String nama) {
+        // pernyataan bahwa nilai variabel nama sama dengan nilai dari variabel lokal nama
+        this.nama = nama;
     }
-    
-    /***
-     * membuat method getNama bertipe String dan mengembalikan nilai menggunakan
-     * @return nama
+
+    public Pasien(String nama, String Alamat, String tempatLahir, int tanggal, int bulan, int tahun, String nik) {
+        this.nama = nama;
+        this.alamat = Alamat;
+        this.tempatLahir = tempatLahir;
+        this.tanggalLahir = tanggal;
+        this.bulanLahir = bulan;
+        this.tahunLahir = tahun;
+        this.noRekamMedis = nik;
+    }
+
+    /**
+     * method untuk mengambil nilai dari variabel noRekamMedis
+     *
+     * @return
      */
-    
-    public String getNama(){
+    public String getNoRekamMedis() {
+        //pengambalian nilai dari variabel noRekamMedis
+        return noRekamMedis;
+    }
+
+    public void setNoRekamMedis(String noRekamMedis) {
+        this.noRekamMedis = noRekamMedis;
+    }
+
+    /**
+     * method untuk meng-set nilai dari variabel noRekamMedis dengan variabel
+     * lokal noRekamMedis dengan tipe data String
+     *
+     * @param noRekamMedis
+     * @throws Exception
+     */
+//    public void setNoRekamMedis(String noRekamMedis) throws Exception {
+//         pengecekan panjang karakter variabel noRekamMedis harus lebih dari 6 
+//        if (noRekamMedis.length() > 6) {
+//            // pernyataan bahwa nilai variabel noRekamMedis sama dengan nilai dari variabel lokal noRekamMedis
+//            this.noRekamMedis = noRekamMedis;
+//        } else {
+//            // pesan apabila input noRekamMedis salah
+//            throw new Exception("Nomor rekam Medis Salah");
+//        }
+//        
+//    }
+    /**
+     * method untuk mengambil nilai dari variabel nama
+     *
+     * @return
+     */
+    public String getNama() {
+        // pengambalian nilai dari variabel nama
         return nama;
     }
-    
-    /***
-     * membuat methodgetAlamat bertipe String dan mengembalikan nilai menggunakan
-     * @return alamat
-     */
 
+    /**
+     * method untuk mengset nilai dari variabel nema dengan parameter lokal nama
+     * yang bertipe String
+     *
+     * @param nama
+     */
+    public void setNama(String nama) {
+        // pernyataan bahwa nilai dari variabel nama sama dengan nilai dari variabel lokal nama
+        this.nama = nama;
+    }
+
+    /**
+     * method untuk mengambil nilai dari variabel alamat
+     *
+     * @return
+     */
     public String getAlamat() {
+        //pengambalian nilai dari variabel alamat
         return alamat;
     }
-    
-    /***
-     * membuat method setAlamat bertipe void dan menyamakan nilai variabel global
-     * alamat dengan variabel lokal alamat
-     * @param alamat 
-     */
 
+    /**
+     * method untuk mengset nilai dari variabel alamat dengan parameter lokal
+     * alamat yang bertipe String
+     *
+     * @param alamat
+     */
     public void setAlamat(String alamat) {
+        // pernyataan bahwa nilai dari variabel alamat sama dengan nilai dari variabel lokal alamat
         this.alamat = alamat;
     }
-    
-    /***
-     * membuat method getTempatLahir bertipe String dan mengembalikan nilai menggunakan
-     * @return tempatLahir
-     */
 
+    /**
+     * method untuk mengambil nilai dari variabel tempatLahir
+     *
+     * @return
+     */
     public String getTempatLahir() {
+        //pengambalian nilai dari variabel tempatLahir
         return tempatLahir;
     }
-    
-    /***
-     * membuat method setTempatLahir bertipe voiddan menyamakan nilai variabel global
-     * tempatLahir dengan variabel lokal tempatLahir
-     * @param tempatLahir 
-     */
 
+    /**
+     * method untuk mengset nilai dari variabel tempatLahir dengan parameter
+     * lokal tempatLahir yang bertipe String
+     *
+     * @param tempatLahir
+     */
     public void setTempatLahir(String tempatLahir) {
+        // pernyataan bahwa nilai dari variabel tempatLahir sama dengan nilai dari variabel lokal tempatLahir
         this.tempatLahir = tempatLahir;
     }
-    
-    /***
-     * membuat method getRekamMedis bertipe String dan mengembalikan nilai menggunakan
-     * @return RekamMedis
-     */
 
-    public String getRekamMedis() {
-        return RekamMedis;
-    }
-    
-    /***
-     * method ini digunakan untuk mengatur panjang nomor rekam medis dengan
-     * menggunakan fungsi exception
-     * @param RekamMedis
-     * @throws Exception 
+    /**
+     * method untuk mengambil nilai dari variabel tanggalLahir
+     *
+     * @return
      */
-
-    public void setRekamMedis(String RekamMedis) throws Exception {
-        //panjang rekam medis yang harus dimasukan lebih dari 6
-        if(this.RekamMedis.length() > 6){
-            this.RekamMedis = RekamMedis;
-            //jika panjang rekam medis yang dimasukan kurang dari dari 6
-        }else{
-            throw new Exception("Nomor Yang Anda Masukan Salah");
-        }
-    }
-    
-    /***
-     * mengembalikan nilai getTanggalLahir yang bertipe integer menggunakan
-     * @return tanggalLahir
-     */
-    
     public int getTanggalLahir() {
+        //pengambalian nilai dari variabel tanggalLahir
         return tanggalLahir;
     }
-    
-    /***
-     * method ini digunkan untuk mengatur tanggal lahir dari pasien
-     * @param tanggalLahir
-     * @throws Exception 
-     */
 
-    public void setTanggalLahir(int tanggalLahir)throws Exception {
-        //tanggal lahir yang dimasukan tidak boleh kurang dari 1 atau harus lebih dari 0
-        if(tanggalLahir > 0){
-            //tanggal lahir yang dimasukan tidak boleh lebih dari 31
-        if(tanggalLahir <= 31){
-           this.tanggalLahir = tanggalLahir;
-           //jika tanggal lahir yang dimasukan lebih dari 31
-        }else{ throw new Exception ("Tanggal yang Anda masukan melebihi batas yang ditentukan");}
-        //jika tanggal lahir yang dimasukan kurang dari 1
-    }else{ throw new Exception ("Tanggal yang Anda masukan kurang dari batas yang ditentukan ");
-    
-        }
-    }
-    
-    /***
-     * mengembalikan nilai getbulanLahir yang bertipe integer menggunakan
-     * @return bulanLahir
+    /**
+     * method untuk meng-set nilai dari variabel tanggalLahir dengan variabel
+     * lokal tanggalLahir dengan tipe data String
+     *
+     * @param tanggalLahir
      */
-    
-    public int getbulanLahir(){
+    public void setTanggalLahir(int tanggalLahir) {
+        //pernyataan bahwa nilai dari variabel tanggalLahir sama dengan nilai dari variabel lokal tanggalLahir
+        this.tanggalLahir = tanggalLahir;
+
+    }
+
+    /**
+     * method untuk mengambil nilai dari variabel bulanLahir
+     *
+     * @return
+     */
+    public int getBulanLahir() {
+        // pengambalian nilai dari variabel bulanLahir
         return bulanLahir;
     }
-    
-    /***
-     * method ini digunakan untuk mengatur bulan lahir dari pasien
+
+    /**
+     * method untuk meng-set nilai dari variabel bulanLahir dengan variabel
+     * lokal bulanLahir dengan tipe data String
+     *
      * @param bulanLahir
-     * @throws Exception 
      */
-    
-    public void setbulanLahir(int bulanLahir)throws Exception{
-        //bulan lahir yang dimasukan tidak boleh kurang dari 1 atau harus lebih dari 0
-        if(bulanLahir > 0){
-            //bulan lahir yang dimasukan tidak boleh lebih dari 12
-        if(bulanLahir <= 12){
-           this.bulanLahir = bulanLahir;
-           //jika bulan lahir yang dimasukan lebih dari 12
-        }else{ throw new Exception ("Bulan yang Anda masukan melebihi batas yang ditentukan");
-        
-        }//jika bulan lahir yang dimasukan kurang dari 1
-    }else{ throw new Exception ("Bulan yang Anda masukan kurang dari batas yang ditentukan ");
-        }   
+    public void setBulanLahir(int bulanLahir) {
+        //pernyataan bahwa nilai dari variabel bulanLahir sama dengan nilai dari variabel lokal bulanLahir
+        this.bulanLahir = bulanLahir;
     }
 
-    /***
-     * mengembalikan nilai gettahunLahir yang bertipe integer menggunakan
-     * @return tahunLahir
+    /**
+     * method untuk mengambil nilai dari variabel tahunLahir
+     *
+     * @return
      */
-    
-    public int gettahunLahir(){
+    public int getTahunLahir() {
+        // pengambalian nilai dari variabel tahunLahir
         return tahunLahir;
     }
-    
-    /***
-     * method ini digunakan untuk mengatur tahun lahir pasien
+
+    /**
+     * method untuk meng-set nilai dari variabel tahunLahir dengan variabel
+     * lokal tahunLahir dengan tipe data String
+     *
      * @param tahunLahir
-     * @throws Exception 
      */
-    
-    public void settahunLahir(int tahunLahir)throws Exception{
-        //tahun lahir yang dimasukan tidak boleh kurang dari 1 atau harus lebih dari 0
-        if(tahunLahir > 0){
-           this.tahunLahir = tahunLahir;
-           //jika tahun lahir yang dimasukan kurang dari 1
-        }else{ throw new Exception ("Tahun yang diinputkan salah");
+    public void setTahunLahir(int tahunLahir) {
+        //pernyataan bahwa nilai dari variabel tahunLahir sama dengan nilai dari variabel lokal tahunLahir
+        this.tahunLahir = tahunLahir;
+    }
+
+    public String getNik() {
+        return nik;
+    }
+
+    public void setNik(String nik) {
+        this.nik = nik;
+    }
+
+    /**
+     * method untuk membuat nomor rekam medis yang terdiri dari tanggal pasien
+     * mengatri ditambah 3 huruf pertama dari nama
+     *
+     * @return
+     */
+    public String BuatNomorRekamMedis() {
+        // mendeklarasikan variabel nomorRekamMedis yang bertipe String
+        String nomorRekamMEdis;
+        // membuat objek baru date dengan tipe data Date
+        Date date = new Date();
+        // membuat objek ft bertipe simpleDateFormat sebagai format tampilan tanggal
+        SimpleDateFormat ft = new SimpleDateFormat("yyyMMdd");
+        //mendeklarasikan nilai dari variabel nomorRekamMedis yaitu tanggal ditambah 3 huruf pertama dari nama
+        nomorRekamMEdis = ft.format(date) + nama.substring(0, 3);
+        //pengembalian nilai variabel nomorRekamMedis
+        return nomorRekamMEdis;
+    }
+
+    /**
+     * method untuk menambahkan objek pasien ke arrayList daftarpasien
+     *
+     * @param pasien
+     */
+    public static void tambahPasienBaru(Pasien pasien) {
+        //mengisi daftaPasien dengan objek pasien 
+        daftarPasien.add(pasien);
+
+    }
+
+    /**
+     * method untuk mencari object pasien berdasarkan nomor rekam medis
+     *
+     * @param NoRM
+     * @return
+     */
+    public static Pasien cariPasien(String NoRM) {
+        //perulangan sebanyak indeks pada daftarpasien
+        for (int i = 0; i < daftarPasien.size(); i++) {
+            //membandingkan data variabel NORM dengan nomor rekam medis dari object pasien indeks ke i
+            if (daftarPasien.get(i).noRekamMedis.equalsIgnoreCase(NoRM)) {
+                return daftarPasien.get(i);
+            }
         }
-    }
-    
-    /***
-     * method ini digunakan untuk mengatur foramat rekam medis pasien dengan menggunakan
-     * tanggal mendaftar dan 3 huruf pertama dari nama pasien
-     * @return 
-     */
-    
-    public String Mendaftar(){
-        //deklarasi objek baru bernama date dengan tipe Date
-      Date date = new Date();
-      //deklarasi variabel RekamMedis dengan format yyyyMMdd (tahun-bulan-tanggal)
-      RekamMedis= "yyyyMMdd";
-      //deklarasi objek baru bernama ft dengan tipe SimpleDateFormat
-      SimpleDateFormat ft = 
-      new SimpleDateFormat (RekamMedis);
-      
-      //deklarasi nilai sub_nama dengan 3 huruf pertama dari variabel nama menggunakan subString
-      String sub_nama = nama.substring(0, 3);
-      //mengembalikan nilai RekamMedis
-        return RekamMedis = ft.format(date).concat(sub_nama);
-    }
-
-    public void setTanggalLahir(int i, int i0, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public String getUsia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //apabila data tidak cocok maka akan mengembalikan nilai null
+        return null;
     }
 }
